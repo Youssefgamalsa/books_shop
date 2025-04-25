@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مكتبتي العربية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <script src="java.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>مكتبتي العربية</h1>
+    <nav>
+      <a href="#">الرئيسية</a>
+      <a href="#">الأكثر مبيعًا</a>
+      <a href="#">الإصدارات الجديدة</a>
+      <a href="#">عن المكتبة</a>
+      <a href="#">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>مرحبًا بك في عالم الكتب العربية</h2>
+    <p>اكتشف أفضل الكتب والروايات العربية المختارة بعناية</p>
+  </section>
+
+  <section class="section">
+    <h2>الأكثر مبيعًا</h2>
+    <div class="books" id="fav_lib">
+    </div>
+  </section>
+  <section class="section about">
+    <h2>عن مكتبتنا</h2>
+    <p>
+      مكتبتي العربية منصة ثقافية تهدف إلى تعزيز القراءة باللغة العربية، وتقديم أفضل الروايات، الكتب الفكرية، وكتب
+      التنمية البشرية. نحن نؤمن أن الكتاب هو رفيق الدرب، وأفضل وسيلة لتغذية الفكر والوجدان.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 مكتبتي العربية - جميع الحقوق محفوظة</p>
+    <p>
+      تابعنا على:
+      <a href="#">فيسبوك</a> |
+      <a href="#">تويتر</a> |
+      <a href="#">إنستغرام</a>
+    </p>
+  </footer>
+
+  <script>
+    const booksArray = [
+      {
+        title: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        image: "./1.jpg",
+      },
+      {
+        title: "1984",
+        author: "George Orwell",
+        image: "./2.jpg",
+      },
+      {
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        image: "./3.jpg",
+      },
+      {
+        title: "Pride and Prejudice",
+        author: "Jane Austen",
+        image: "./4.jpg",
+      },
+      {
+        title: "The Catcher in the Rye",
+        author: "J.D. Salinger",
+        image: "./5.jpg",
+      },
+      {
+        title: "The Hobbit",
+        author: "J.R.R. Tolkien",
+        image: "./6.jpg",
+      },
+      {
+        title: "Fahrenheit 451",
+        author: "Ray Bradbury",
+        image: "./7.jpg",
+      },
+      {
+        title: "Jane Eyre",
+        author: "Charlotte Brontë",
+        image: "./8.jpg",
+      },
+      {
+        title: "Brave New World",
+        author: "Aldous Huxley",
+        image: "./9.jpg",
+      },
+      {
+        title: "Animal Farm",
+        author: "George Orwell",
+        image: "./10.jpg",
+      },
+      {
+        title: "Moby-Dick",
+        author: "Herman Melville",
+        image: "./11.jpg",
+      },
+      {
+        title: "The Lord of the Rings",
+        author: "J.R.R. Tolkien",
+        image: "./12.jpg",
+      },
+      {
+        title: "The Alchemist",
+        author: "Paulo Coelho",
+        image: "./13.jpg",
+      },
+      {
+        title: "Wuthering Heights",
+        author: "Emily Brontë",
+        image: "./14.jpg",
+      },
+      {
+        title: "The Picture of Dorian Gray",
+        author: "Oscar Wilde",
+        image: "./15.jpg",
+      },
+      {
+        title: "Frankenstein",
+        author: "Mary Shelley",
+        image: "./16.jpg",
+      },
+      {
+        title: "Dracula",
+        author: "Bram Stoker",
+        image: "./17.jpg",
+      },
+      {
+        title: "Crime and Punishment",
+        author: "Fyodor Dostoevsky",
+        image: "./18.jpg",
+      },
+      {
+        title: "The Odyssey",
+        author: "Homer",
+        image: "./19.jpg",
+      },
+      {
+        title: "Les Misérables",
+        author: "Victor Hugo",
+        image: "./20.jpg",
+      },
+    ];
+
+    const booksElement = document.getElementById("fav_lib");
+    const viewBooks = () => {
+      for (i = 0; i < booksArray.length; i++) {
+        booksElement.innerHTML += `
+      <div class="book-card">
+        <img src="${booksArray[i].image}">
+        <div class="info">
+          <h3>${booksArray[i].title}</h3>
+          <p>بقلم: ${booksArray[i].author} </p>
+        </div>
+      </div>
+      `
+      }
+    }
+
+    viewBooks();
+
+
+
+  </script>
+</body>
+
+
+</html>
