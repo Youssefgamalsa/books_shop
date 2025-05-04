@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" id="cont">
+
+    </div>
+
+    <script>
+        const container = document.getElementById('cont');
+        const books = [
+            {
+                "id": "1",
+                "title": "To Kill a Mockingbird",
+                "author": "Harper Lee",
+                "image": "./1.jpg",
+                "price": "100",
+                
+            },
+            {
+                "id": "2",
+                "title": "1984",
+                "author": "George Orwell",
+                "image": "./2.jpg",
+                "price": "120"
+            },
+            {
+                "id": "3",
+                "title": "The Great Gatsby",
+                "author": "F. Scott Fitzgerald",
+                "image": "./3.jpg",
+                "price": "130"
+            },
+            {
+                "id": "3",
+                "title": "Pride and Prejudice",
+                "author": "Jane Austen",
+                "image": "./4.jpg",
+                "price": "150"
+            },
+            {
+                "id": "4",
+                "title": "The Catcher in the Rye",
+                "author": "J.D. Salinger",
+                "image": "./5.jpg",
+                "price": "160"
+            },
+            {
+                "id": "5",
+                "title": "The Hobbit",
+                "author": "J.R.R. Tolkien",
+                "image": "./6.jpg",
+                "price": "180"
+            },
+            {
+                "id": "6",
+                "title": "Fahrenheit 451",
+                "author": "Ray Bradbury",
+                "image": "./7.jpg",
+                "price": "140"
+            },
+            {
+                "id": "7",
+                "title": "Jane Eyre",
+                "author": "Charlotte Brontë",
+                "image": "./8.jpg",
+                "price": "170"
+            },
+            {
+                "id": "8",
+                "title": "Brave New World",
+                "author": "Aldous Huxley",
+                "image": "./9.jpg",
+                "price": "190"
+            },
+            {
+                "id": "9",
+                "title": "Animal Farm",
+                "author": "George Orwell",
+                "image": "./10.jpg",
+                "price": "190"
+            },
+            {
+                "id": "10",
+                "title": "Moby-Dick",
+                "author": "Herman Melville",
+                "image": "./11.jpg",
+                "price": "200"
+            },
+            {
+                "id": "11",
+                "title": "The Lord of the Rings",
+                "author": "J.R.R. Tolkien",
+                "image": "./12.jpg",
+                "price": "180"
+            },
+            {
+                "id": "12",
+                "title": "The Alchemist",
+                "author": "Paulo Coelho",
+                "image": "./13.jpg",
+                "price": "200"
+            },
+            {
+                "id": "13",
+                "title": "Wuthering Heights",
+                "author": "Emily Brontë",
+                "image": "./14.jpg",
+                "price": "190"
+            },
+            {
+                "id": "14",
+                "title": "The Picture of Dorian Gray",
+                "author": "Oscar Wilde",
+                "image": "./15.jpg",
+                "price": "170"
+            },
+            {
+                "id": "15",
+                "title": "Frankenstein",
+                "author": "Mary Shelley",
+                "image": "./16.jpg",
+                "price": "260"
+            },
+            {
+                "id": "16",
+                "title": "Dracula",
+                "author": "Bram Stoker",
+                "image": "./17.jpg",
+                "price": "130"
+            },
+            {
+                "id": "17",
+                "title": "Crime and Punishment",
+                "author": "Fyodor Dostoevsky",
+                "image": "./18.jpg",
+                "price": "230"
+            },
+            {
+                "id": "18",
+                "title": "The Odyssey",
+                "author": "Homer",
+                "image": "./19.jpg",
+                "price": "230"
+            },
+            {
+                "id": "19",
+                "title": "Les Misérables",
+                "author": "Victor Hugo",
+                "image": "./20.jpg",
+                "price": "1230"
+            }
+        ];
+        let para = new URLSearchParams(window.location.search);
+        let id = para.get('id');
+        console.log(id)
+
+
+        const fillContainer = () => {
+            container.innerHTML += `
+             <div class="book-image">
+            <img src=${books[id].image} alt="غلاف الكتاب" />
+        </div>
+        <div class="book-details">
+            <h1> ${books[id].title}</h1>
+            <div class="meta">المؤلف: <strong> ${books[id].author}</strong></div>
+            <div class="meta"> السعر : <strong> ${books[id].price} جنيه</strong></div>
+            <div class="rating">★★★★★</div>
+            <div class="description">
+                هذا وصف مفصل للكتاب، يمكن أن يحتوي على ملخص القصة، أفكار رئيسية، ولماذا يُعتبر هذا الكتاب مميزاً. يمكنك
+                تعديل هذا النص حسب الحاجة.
+            </div>
+            <button class="btn-favorite" onclick="toggleFavorite()">❤️ أضف إلى المفضلة</button>
+        </div>
+            
+            `
+        }
+        fillContainer()
+        let isFavorite = false;
+        function toggleFavorite() {
+            isFavorite = !isFavorite;
+            const btn = document.querySelector('.btn-favorite');
+            btn.textContent = isFavorite ? '💔 إزالة من المفضلة' : '❤️ أضف إلى المفضلة';
+        }
+    </script>
+</body>
+
+</html>
